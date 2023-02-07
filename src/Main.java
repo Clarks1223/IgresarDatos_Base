@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        buscar venbuscar= new buscar();
+        venbuscar.mostrarVentana();
+        /*Formulario ven1= new Formulario();
+        ven1.MostarVentana();*/
     }
 }
