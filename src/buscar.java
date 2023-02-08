@@ -44,7 +44,23 @@ public class buscar {
         JBactualizar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Connection con;
+                try{
+                    con= getConnection();
+                    PreparedStatement pss;
+                    pss=con.prepareStatement("update Persona set PerNombre=?, PerCEL=?, PerMail=?");
+                    pss.setString(1,JTnombre.getText());
+                    pss.setString(2,JTcel.getText());
+                    pss.setString(3,JTmail.getText());
+                    int res = pss.executeUpdate();
+                    if(res>0){
+                        JOptionPane.showMessageDialog(null, "Persona actulizada");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Persona no actualizada");
+                    }
+                }catch (HeadlessException |  SQLException f){
+                    System.err.println(f);
+                }
             }
         });
     }
