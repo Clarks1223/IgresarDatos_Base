@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1b48f48-c8db-40ed-8625-18e7f2e75424" name="Changes" comment="">
+    <list default="true" id="e1b48f48-c8db-40ed-8625-18e7f2e75424" name="Changes" comment="Boton buscar y boton actulizar funcionando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IgresarDatos_Base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/IgresarDatos_Base.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buscar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buscar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +58,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675178196987</updated>
-      <workItem from="1675817113711" duration="3017000" />
+      <workItem from="1675817113711" duration="4536000" />
     </task>
+    <task id="LOCAL-00001" summary="Boton buscar y boton actulizar funcionando">
+      <created>1675820267267</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675820267267</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,5 +83,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Boton buscar y boton actulizar funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boton buscar y boton actulizar funcionando" />
   </component>
 </project>
