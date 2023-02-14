@@ -17,6 +17,7 @@ public class buscar {
     private JLabel JLnombre;
     private JLabel JLcelular;
     private JLabel JLemail;
+    private JButton JBEliminar;
     JFrame venBuscar = new JFrame("buscar");
     ConeccionBD estcon= new ConeccionBD();
     public buscar() {
@@ -25,20 +26,17 @@ public class buscar {
             public void actionPerformed(ActionEvent e) {
                 String id=JTid.getText();
                 Connection con;
+                int res=0;
                 try {
                     con = getConnection();
-                    String query = "select * from Persona where PerID=" + id + ";";
                     Statement s = con.createStatement();
-                    ResultSet rs = s.executeQuery(query);
-                    if (rs == null) {
-                        JOptionPane.showMessageDialog(null, "La persona no esta en la base");
-                    } else {
+                    ResultSet rs = s.executeQuery("select * from Persona where PerID=" + id);
                     while (rs.next()) {
                         JTnombre.setText(rs.getString(2));
                         JTcel.setText(rs.getString(3));
                         JTmail.setText(rs.getString(4));
                     }
-                }con.close();
+                    con.close();
                 }catch (HeadlessException | SQLException f){
                     System.err.println(f);
                 }
@@ -63,7 +61,29 @@ public class buscar {
                         JOptionPane.showMessageDialog(null, "Persona no actualizada");
                     }
                     con.close();
-                }catch (HeadlessException |  SQLException f){
+                }catch (HeadlessException | SQLException f){
+                    System.err.println(f);
+                }
+            }
+        });
+        JBEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Connection con;
+                String id=JTid.getText();
+                int res;
+                try{
+                    con=getConnection();
+                    PreparedStatement elim;
+                    elim= con.prepareStatement("DELETE from PERSONA where PerID="+id);
+                    res=elim.executeUpdate();
+                    if (res>0){
+                        JOptionPane.showMessageDialog(null, "Registro eliminado");
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Registro no eliminado");
+                    }
+                    con.close();
+                }catch(HeadlessException | SQLException f){
                     System.err.println(f);
                 }
             }
